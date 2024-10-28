@@ -53,14 +53,23 @@ function App() {
   return (
 
   <div>
+    
     <h1>welcome to pizza store</h1>
+    <Pizza></Pizza>
+    <Pizza></Pizza>
     <Pizza></Pizza>
   </div>
   )
 }
 
 function Pizza() {
-  return <h2>Pizza</h2>
+  return (<div>
+    <img src="./pizzas/prosciutto.jpg" alt="" />
+    <h2>Pizza Prosciutto</h2>
+    <p> Tomato, mozarella, ham, aragula, and burrata cheese </p>
+    
+    
+    </div>)
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
