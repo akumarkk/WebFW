@@ -95,9 +95,17 @@ function Menu() {
 
 function Footer() {
 
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
+ 
+
+
   return (
     <footer className='footer'>
-      {new Date().toLocaleDateString()}. we're currently open now. 
+      {new Date().toLocaleDateString()}
+      {isOpen && <p>. we're currently open now. </p>}
     </footer>
     // React.createElement('footer', null, "We're currently open")
     )
