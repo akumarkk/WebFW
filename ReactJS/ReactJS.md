@@ -61,3 +61,18 @@ States
     - state mutates
     - 
 
+Render list
+    - map - returns an array of el;
+
+    - conditional rendering(&&)
+    - renders res of op
+    - ternary op 
+    pizzas > 0? () : ()
+
+Destructuring
+    - {nameOfProp, nameOfProp}
+    - 
+
+Fragments
+    grouping elements together
+    <>group of el</>
