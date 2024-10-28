@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import './index.css';
+import './index.css';
 // import App from './App';
 // import reportWebVitals from './reportWebVitals';
 
@@ -51,7 +51,7 @@ const pizzaData = [
 ];
 function App() {
   return (
-  <div>
+  <div className='container'>
     <Header></Header>
     <Menu></Menu>
     <Footer/>
@@ -59,16 +59,24 @@ function App() {
   )
 }
 
-
+const hraderStyle = {
+color : 'red',
+fontSize: "48px",
+textTransform: "uppercase"
+}
 function Header() {
-  return (<h1>welcome to Pizza store Co.</h1>)
+  return (<header className='header'>
+
+    <h1 style={hraderStyle} >welcome to Pizza store Co.</h1>
+  </header>)
 }
 
 
 function Menu() {
 
   return (
-    <div>
+    <div className='menu'>
+      <h2>Our Menu</h2>
       <Pizza></Pizza>
       <Pizza></Pizza>
       <Pizza></Pizza>
@@ -79,7 +87,7 @@ function Menu() {
 function Footer() {
 
   return (
-    <footer>
+    <footer className='footer'>
       {new Date().toLocaleDateString()}. we're currently open now. 
     </footer>
     // React.createElement('footer', null, "We're currently open")
@@ -91,7 +99,7 @@ function Footer() {
 function Pizza() {
   return (<div>
     <img src="./pizzas/prosciutto.jpg" alt="" />
-    <h2>Pizza Prosciutto</h2>
+    <h3>Pizza Prosciutto</h3>
     <p> Tomato, mozarella, ham, aragula, and burrata cheese </p>
     
     
