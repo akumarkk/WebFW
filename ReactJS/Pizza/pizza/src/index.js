@@ -51,9 +51,7 @@ const pizzaData = [
 ];
 function App() {
   return (
-
   <div>
-    
     <h1>welcome to pizza store</h1>
     <Pizza></Pizza>
     <Pizza></Pizza>
