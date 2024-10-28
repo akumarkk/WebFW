@@ -104,8 +104,25 @@ function Footer() {
 
   return (
     <footer className='footer'>
-      {new Date().toLocaleDateString()}
-      {isOpen && <p>. we're currently open now. </p>}
+      {new Date().toLocaleDateString()
+      
+      }
+      {
+      true && (
+        
+        <div className='order'>
+          <p>
+            we're currently open.
+          </p>
+          <button className='btn'>
+            Order
+          </button>
+        </div>
+        )
+      }
+      {new Date().toLocaleDateString()} 
+      {false} 
+      {/* doesn't render true/false values */}
     </footer>
     // React.createElement('footer', null, "We're currently open")
     )
