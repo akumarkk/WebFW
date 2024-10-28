@@ -9,6 +9,15 @@
 - JSX
     - html + JS + css
     - babel - converts JSX to JS
+    - js mode {} - returns values
+    - states not allowed - if/else, for, switch
+    - allowed - arr of objs, ternary operator, map()
+    - JSX results in JS expression, which can be assigned/passed as params
+    ```
+    const el = <h1> welcome to pizza store </h1>
+
+    const el = React.createElement("h1", null, "welcome to pizza store")
+    ```
 - comp - building blocks of react; piece of ui, like lego pieces
     - file per comp
     - pass data b/w comps props
@@ -40,6 +49,7 @@
 
 - Props
     - props order not imp
+    - props camelCased
     - pass data down comp tree - one-way data flow; angular two-way data flow;
     - props args to JS function
     - props read-only/immutable

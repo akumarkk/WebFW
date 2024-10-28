@@ -77,27 +77,18 @@ function Menu() {
   return (
     <div className='menu'>
       <h2>Our Menu</h2>
-      <Pizza 
-        name='Pizza Prosciutto' 
-        ingredients='Tomato, mozarella, ham, aragula, and burrata cheese' 
-        imgName='pizzas/prosciutto.jpg'
+
+      <div>
+        <ul className='pizzas'>
+        {pizzaData.map(p => <Pizza name={p.name} 
+        ingredients={p.ingredients} 
+        imgName={p.photoName}
         price={10}
-        >
-
-        </Pizza>
-      <Pizza 
-        name='Pizza Salamino' 
-        ingredients='Tomato, mozarella, and pepperoni' 
-        imgName='pizzas/salamino.jpg'
-        price={10}>
+        key={p.name}
+        ></Pizza>)}
+        </ul>
         
-        </Pizza>
-      <Pizza 
-        name='Pizza Funghi' 
-        ingredients='Tomato, mozarella, mushrooms, and onion' 
-        imgName='pizzas/funghi.jpg'>
-
-        </Pizza>
+      </div>
     </div>
     )
 }
@@ -117,17 +108,21 @@ function Footer() {
 function Pizza(props) {
   console.log(props)
   // props.imgName = "test" // err
-  return (<div>
-    <img src={props.imgName} alt="" />
-    <div>
+  return (
+    <li className='pizza'>
+      <div>
+        <img src={props.imgName} alt="" />
+        <div>
 
-    <h3>{props.name}</h3>
-    <p> {props.ingredients} </p>
-    <span>{props.price}</span>
-    </div>
-    
-    
-    </div>)
+          <h3>{props.name}</h3>
+          <p> {props.ingredients} </p>
+          <span>{props.price}</span>
+        </div>
+
+
+      </div>
+    </li>
+    )
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
