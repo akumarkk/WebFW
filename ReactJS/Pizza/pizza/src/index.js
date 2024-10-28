@@ -80,7 +80,13 @@ function Menu() {
 
       <div>
         <ul className='pizzas'>
-        {pizzaData.map(p => <Pizza name={p.name} 
+        {/* {pizzaData.map(p => <Pizza name={p.name} 
+        ingredients={p.ingredients} 
+        imgName={p.photoName}
+        price={10}
+        key={p.name}
+        ></Pizza>)} */}
+        {pizzaData.map(p => <Pizza pizzaObj={p} 
         ingredients={p.ingredients} 
         imgName={p.photoName}
         price={10}
@@ -100,6 +106,15 @@ function Footer() {
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
  
+  if(!isOpen) {
+    return (
+      <p>
+            we're currently not open.
+          </p>
+      )
+  }
+
+  // footer not rendered
 
 
   return (
@@ -130,18 +145,22 @@ function Footer() {
 }
 
 
-function Pizza(props) {
-  console.log(props)
+function Pizza({pizzaObj}) {
+  console.log(pizzaObj, pizzaObj.soldOut)
+
+  if(pizzaObj.soldOut) {
+  return null
+}
   // props.imgName = "test" // err
   return (
     <li className='pizza'>
       <div>
-        <img src={props.imgName} alt="" />
+        <img src={pizzaObj.photoName} alt="" />
         <div>
 
-          <h3>{props.name}</h3>
-          <p> {props.ingredients} </p>
-          <span>{props.price}</span>
+          <h3>{pizzaObj.name}</h3>
+          <p> {pizzaObj.ingredients} </p>
+          <span>{pizzaObj.price}</span>
         </div>
 
 
