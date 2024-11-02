@@ -51,7 +51,7 @@ export default function Home() {
   console.log("comp called", value);
   const onClick = () => {
     // setValue(value+1);
-    setValue(valueT+1);
+    setValueT(valueT+1);
     // value = value + 1;
     console.log("onClick called", value);
   }
