@@ -1,4 +1,5 @@
 export function hello(who:string = "world"):string {
+    // fastify plugin
     return `hello ${who}!`;
 }
 
