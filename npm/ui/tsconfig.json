@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "importHelpers": true,                              /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+    "lib": ["es2018","dom"],
+    "module": "commonjs",                                /* Specify what module code is generated. */
+    "outDir": "lib",
+    "pretty": true,  
+    "rootDir": "server",
+    "sourceMap": true,                                  /* Specify the root folder within your source files. */
+    "target": "es2018",
+    "skipLibCheck": true,
+    "resolveJsonModule": true,                                 /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */  
+  },
+  "include": ["server", "server/**/*.json"]
+}
