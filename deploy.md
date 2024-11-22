@@ -4,26 +4,26 @@
 
 - Netlify - Netlify is a framework-agnostic composable platform, to build high-performing modern web experiences that can scale, innovate, ship to prod faster.
  - Angular, Astro
-Eleventy
-Express
-Gatsby
-Gridsome
-Grunt
-Hexo
-Hugo
-Hydrogen
-Jekyll
-Middleman
-MkDocs
-Next.js
-Nuxt
-React and Create React App
-Remix
-RedwoodJS
-SvelteKit and Svelte
-Vite
-Vue CLI
-VuePress 
+    Eleventy
+    Express
+    Gatsby
+    Gridsome
+    Grunt
+    Hexo
+    Hugo
+    Hydrogen
+    Jekyll
+    Middleman
+    MkDocs
+    Next.js
+    Nuxt
+    React and Create React App
+    Remix
+    RedwoodJS
+    SvelteKit and Svelte
+    Vite
+    Vue CLI
+    VuePress 
 
 - Vercel - A cloud platform that specializes in hosting web applications. It's the native platform for Next.js
     - Scalability
