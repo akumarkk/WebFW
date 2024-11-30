@@ -11,6 +11,8 @@ Vue follows Single Page Component with the below components -
 ref is a function imported from the vue library that creates a reactive reference to a value. When you use ref(null), you're creating a ref that initially holds a null value. This ref can be used to store and update values reactively within your Vue component.
 
 DOM Element References: While ref can be used for general value storage, it's commonly used to reference DOM elements. In this case, you would assign the ref to an element in your template using the ref attribute.
+
+
 ```
 <template>
   <input ref="myInput" type="text">
