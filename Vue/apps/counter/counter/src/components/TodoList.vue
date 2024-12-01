@@ -10,7 +10,7 @@
     </div>
 
     <div class="row">
-      <div class="col-12 col-lg-6">
+      <div class="col-12">
         <ul class="list-group">
           <!-- :todo = "todo" -->
           <!-- <li v-for="(todo, index) in todos" :key="index"> {{ todo.todo }} </li> -->
