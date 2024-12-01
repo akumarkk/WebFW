@@ -12,5 +12,4 @@ Composition API
 
 Options API
 - using export default{ methods: {}, components:{}, data(){}, props:{}}
-
 - v-on - shorthand for @ - used to pass event props
