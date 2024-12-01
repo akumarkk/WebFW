@@ -20,10 +20,10 @@
 export default {
     props: {
         todoitem: String,
-    // completed: Boolean,
-    todo: {
-      type: Object
-    }
+        completed: Boolean,
+        todo: {
+            type: Object
+        }
     },
 
     data() {
@@ -32,7 +32,6 @@ export default {
             newTodoString: ""
         }
     }
-
 }
 
 
