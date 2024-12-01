@@ -10,9 +10,11 @@
     </div>
 
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 col-lg-6">
         <ul class="list-group">
-          <li>item -1</li>
+          <!-- :todo = "todo" -->
+          <!-- <li v-for="(todo, index) in todos" :key="index"> {{ todo.todo }} </li> -->
+          <ListItem v-for="(todo, index) in todos" :key="index" :todo = "todo" :todoitem="todo.todo" :completed="todo.completed"/>
         </ul>
       </div>
     </div>
@@ -20,7 +22,10 @@
 </template>
 
 <script>
+import ListItem from './ListItem.vue'
 export default {
+  //
+  components: {ListItem},
   data() {
     return {
       todos: [
