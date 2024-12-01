@@ -14,7 +14,13 @@
         <ul class="list-group">
           <!-- :todo = "todo" -->
           <!-- <li v-for="(todo, index) in todos" :key="index"> {{ todo.todo }} </li> -->
-          <ListItem v-for="(todo, index) in todos" :key="index" :todo = "todo" :todoitem="todo.todo" :completed="todo.completed"/>
+          <ListItem v-for="(todo, index) in todos" 
+          :key="index" 
+          :todo = "todo" 
+          :todoitem="todo.todo" 
+          :completed="todo.completed"
+          @on-delete="deleteToDo(todo)"
+          />
         </ul>
       </div>
     </div>
@@ -47,7 +53,7 @@ export default {
       todo.completed = !todo.completed;
     },
     deleteToDo(todo) {
-      this.todos = this.todo.filter((t) => t.todo != todo);
+      this.todos = this.todos.filter((t) => t != todo);
     },
   },
 };

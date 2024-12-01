@@ -8,7 +8,7 @@
 
         </form>
         <button class="btn btn-outline-primary">Edit</button>
-        <button class="btn btn-outline-danger">Delete</button>
+        <button class="btn btn-outline-danger" @click="$emit('on-delete')">Delete</button>
 
 
     </li>
