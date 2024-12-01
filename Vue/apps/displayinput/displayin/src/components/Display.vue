@@ -1,13 +1,10 @@
 <template>
     <div>
-        <DisplayItem @display-text="handleInput">
-
-        </DisplayItem>
+        <DisplayItem @display-text="handleInput"></DisplayItem>
         <p>
             you entered - {{ message }}!
         </p>
     </div>
-    <!-- <input type="text" @input="handleInput"/> -->
 
 </template>
 <script setup lang="ts">
