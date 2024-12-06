@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick quizz</title>
+    <script src="https://unpkg.com/vue@3.4.0"></script>
+
+    <style>
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h3>{{q}}</h3>
+        Ans: <input type="text" v-model="a">
+
+        <p :class="{correct: comp=='correct', incorrect: comp=='incorrect'}">{{comp}}</p>
+
+    </div>
+    <script>
+        const { createApp, ref, reactive, computed } = Vue;
+        const App = {
+            setup() {
+                const q = ref("what's 4+6 = ?");
+                const a = ref('10')
+                const comp = computed(()=> {
+                    console.log(a);
+                    return a.value == "10" ? "correct": "incorrect"
+                })
+
+                return {q,a, comp}
+
+            }
+
+        };
+        createApp(App).mount('#app');
+    </script>
+    
+</body>
+</html>
