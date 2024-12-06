@@ -34,8 +34,6 @@
         const scientist = computed(()=> {return isChecked.value ? "you typed scientist": 'you typed not a scientist'})
         return {isChecked, scientist}
       },
-
-      
     };
 
     createApp(App).mount('#app');
