@@ -17,24 +17,59 @@
 </head>
 <body>
     <div id="app">
-        <h3>{{q}}</h3>
+        <h3>{{qs[i]}}</h3>
         Ans: <input type="text" v-model="a">
 
-        <p :class="{correct: comp=='correct', incorrect: comp=='incorrect'}">{{comp}}</p>
+        <p v-show="showElement" :class="{correct: comp=='correct', incorrect: comp=='incorrect'}">{{comp}}</p>
 
     </div>
     <script>
         const { createApp, ref, reactive, computed } = Vue;
         const App = {
             setup() {
+                const i = ref(0);
+                let showElement = ref(false);
+                const qs = ["what's 4+6 = ?", "what's 4*6 =?", "what's 4-6 =?"];
+                const as = ["10", "24", "-2"];
                 const q = ref("what's 4+6 = ?");
                 const a = ref('10')
-                const comp = computed(()=> {
+                let v = ref('correct')
+                let comp = computed(()=> {
                     console.log(a);
-                    return a.value == "10" ? "correct": "incorrect"
+                    return v.value
+                    // return v.value == "10" ? "correct": "incorrect"
                 })
+                
+                const setInt = () => setInterval(() => {
+                    console.log(comp.value, i.value, a.value, as[i.value], as)
+                    v.value = a.value == as[i.value] ? "correct" : "incorrect";
+                    showElement.value = true;
 
-                return {q,a, comp}
+                    // i.value++;
+
+                }, 4000);
+
+                let intervalId =setInt()
+
+                setInterval(() => {
+                    showElement.value = false;
+                    clearInterval(intervalId);
+                    intervalId = setInt();
+                    i.value++;
+
+                }, 6000);
+
+
+                // comp = computed(() => {
+
+                //     setTimeout(()=> {
+                //         comp.value = qs[i] ==as[i]? "correct": "incorrect";
+                //         i.value++;
+
+                //     }, 4000);
+                // })
+
+                return {qs,as, comp,i, a, v, showElement}
 
             }
 
