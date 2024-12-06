@@ -19,6 +19,10 @@
     .isnotsci {
       color: sandybrown;
     }
+
+    .m {
+      color: blue;
+    }
   </style>
   <script src="https://unpkg.com/vue@3.4.0"></script>
 </head>
@@ -28,6 +32,8 @@
     <div>
       <input type="checkbox" value="isChecked" v-model="isChecked"> Are you a scientist?
       <p :class="{issci: isChecked, isnotsci: !isChecked}">{{scientist}}</p>
+      Major  <input type="text" v-model="major">
+      <p >your majoris <span :class="{m:true}">{{major}}</span> </p>
   
     </div>
   </div>
@@ -36,10 +42,11 @@
     const App = {
       setup() {
         // const
+        const major = ref('Ai');
         console.log(`setup ${new Date()}`);
         const isChecked = ref(false);
         const scientist = computed(()=> {return isChecked.value ? "you typed scientist": 'you typed not a scientist'})
-        return {isChecked, scientist}
+        return {isChecked, scientist, major}
       },
     };
 
