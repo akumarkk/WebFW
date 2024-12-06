@@ -17,8 +17,18 @@
 </head>
 <body>
     <div id="app">
-        <h3>{{qs[i]}}</h3>
-        Ans: <input type="text" v-model="a">
+        
+        <div v-show="!showRes">
+            <h3>{{qs[i]}}</h3>
+            <label for="ans">Ans:</label>
+            <input type="text" v-model="a">
+            
+        </div>
+        <div>
+            <h3 v-show="showRes">Correctly answered {{count.count}}</h3>
+        </div>
+
+        <div></div>
 
         <p v-show="showElement" :class="{correct: comp=='correct', incorrect: comp=='incorrect'}">{{comp}}</p>
 
@@ -27,8 +37,10 @@
         const { createApp, ref, reactive, computed } = Vue;
         const App = {
             setup() {
+                let count={count: 0};
                 const i = ref(0);
                 let showElement = ref(false);
+                let showRes = ref(false);
                 const qs = ["what's 4+6 = ?", "what's 4*6 =?", "what's 4-6 =?"];
                 const as = ["10", "24", "-2"];
                 const q = ref("what's 4+6 = ?");
@@ -43,19 +55,26 @@
                 const setInt = () => setInterval(() => {
                     console.log(comp.value, i.value, a.value, as[i.value], as)
                     v.value = a.value == as[i.value] ? "correct" : "incorrect";
+                    if (a.value == as[i.value]) {count.count++}
                     showElement.value = true;
 
                     // i.value++;
 
                 }, 4000);
 
-                let intervalId =setInt()
+                let intervalId =setInt();
 
-                setInterval(() => {
+                const intMain =  setInterval(() => {
                     showElement.value = false;
                     clearInterval(intervalId);
-                    intervalId = setInt();
                     i.value++;
+                    if(i.value == as.length) {
+                        clearInterval(intMain);
+                        showRes.value = true;
+                        return;
+                    }
+                    intervalId = setInt();
+                    
 
                 }, 6000);
 
@@ -69,7 +88,7 @@
                 //     }, 4000);
                 // })
 
-                return {qs,as, comp,i, a, v, showElement}
+                return {qs,as, comp,i, a, v, showElement, showRes, count}
 
             }
 
