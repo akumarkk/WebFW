@@ -12,6 +12,13 @@
       padding: 20px;
       font-size: 2em;
     }
+    .issci {
+      color: green;
+    }
+
+    .isnotsci {
+      color: sandybrown;
+    }
   </style>
   <script src="https://unpkg.com/vue@3.4.0"></script>
 </head>
@@ -20,7 +27,7 @@
   <div id="app">
     <div>
       <input type="checkbox" value="isChecked" v-model="isChecked"> Are you a scientist?
-      <p>{{scientist}}</p>
+      <p :class="{issci: isChecked, isnotsci: !isChecked}">{{scientist}}</p>
   
     </div>
   </div>
