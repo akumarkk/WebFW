@@ -32,4 +32,11 @@ Web vitals
         - Minimize Critical JavaScript
         - Optimize JavaScript - tree shaking
 
+    - Speed Index - Speed Index is a web performance metric that measures how quickly the content of a page is visually displayed during page load.
+
+        - User Experience: A lower Speed Index means a faster perceived load time, leading to a better user experience.
+        - SEO: Search engines like Google consider page speed as a ranking factor. A faster website can improve your search engine rankings.
+        - Business Impact: Faster loading times can lead to increased conversions, reduced bounce rates, and higher customer satisfaction.
+
+
 
