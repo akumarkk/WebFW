@@ -72,3 +72,5 @@ Lazy Loading: Delaying the loading of non-critical resources until they are actu
 Tree Shaking: Removing unused code from the final bundle.   
 Minification and Compression: Reducing the size of the JavaScript and CSS files.   
 Caching: Leveraging browser caching to store static assets and reduce network requests.
+
+Hybrid Rendering Approaches: To address the initial load time issue, hybrid rendering approaches like Server-Side Rendering (SSR) and Incremental Static Regeneration (ISR) can be used. These techniques involve rendering the initial HTML on the server, improving initial load times and SEO.
