@@ -65,12 +65,11 @@ This can lead to slower initial load times, especially for larger applications. 
 
 Strategies to Optimize Initial Load Time in CSR:
 
-While the entire JavaScript bundle is often loaded upfront, there are techniques to optimize initial load time:   
-
-Code Splitting: Breaking down the JavaScript bundle into smaller chunks that are loaded on demand, as needed.   
-Lazy Loading: Delaying the loading of non-critical resources until they are actually required.   
-Tree Shaking: Removing unused code from the final bundle.   
-Minification and Compression: Reducing the size of the JavaScript and CSS files.   
-Caching: Leveraging browser caching to store static assets and reduce network requests.
+While the entire JavaScript bundle is often loaded upfront, there are techniques to optimize initial load time:
+- Code Splitting: Breaking down the JavaScript bundle into smaller chunks that are loaded on demand, as needed.
+- Lazy Loading: Delaying the loading of non-critical resources until they are actually required.
+- Tree Shaking: Removing unused code from the final bundle.
+Minification and Compression: Reducing the size of the JavaScript and CSS files.
+- Caching: Leveraging browser caching to store static assets and reduce network requests.
 
 Hybrid Rendering Approaches: To address the initial load time issue, hybrid rendering approaches like Server-Side Rendering (SSR) and Incremental Static Regeneration (ISR) can be used. These techniques involve rendering the initial HTML on the server, improving initial load times and SEO.
