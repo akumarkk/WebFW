@@ -9,7 +9,7 @@ Web vitals
 - FCP - web performance metric that measures the time it takes for a browser to render the first piece of DOM content on a page. This includes text, images, or non-white canvas elements. A faster FCP generally leads to a better user experience, as it gives users a visual indication that the page is loading.
     - tools : Lighthouse, WebPageTest
 
-- RBE - render-blocking elements are resources, primarily CSS and JavaScript files, that delay the initial rendering of a webpage. The browser must fully download and process these resources before it can start displaying the page's content.
+- RBE(Js/css) - render-blocking elements are resources, primarily CSS and JavaScript files, that delay the initial rendering of a webpage. The browser must fully download and process these resources before it can start displaying the page's content.
     - Delayed Rendering: Users have to wait longer to see content, leading to a poor user experience.
     - Increased Load Times: This can significantly impact page load times, especially on slower connections.
     - Negative SEO Impact: Search engines may penalize slow-loading websites, penalize their ranking.
@@ -32,11 +32,24 @@ Web vitals
         - Minimize Critical JavaScript
         - Optimize JavaScript - tree shaking
 
+    - `images themselves are not typically render-blocking resources.`
+    Render-blocking resources are primarily JavaScript and CSS files that delay the initial rendering of a webpage. The browser must download and parse these files before it can start rendering the page's content.
+
     - Speed Index - Speed Index is a web performance metric that measures how quickly the content of a page is visually displayed during page load.
 
         - User Experience: A lower Speed Index means a faster perceived load time, leading to a better user experience.
         - SEO: Search engines like Google consider page speed as a ranking factor. A faster website can improve your search engine rankings.
         - Business Impact: Faster loading times can lead to increased conversions, reduced bounce rates, and higher customer satisfaction.
+- Cumulative layout shift
+
+
+- Perceived Perf
+    - Large images can significantly slow down page load times, especially if they are above the fold.
+        - Compress Images: Use tools like TinyPNG or Squoosh to reduce image file sizes without compromising quality.
+        - Use Appropriate Image Formats: Choose the right format (e.g., JPEG, PNG, WebP) for different image types.
+        - Load images only when they are about to be viewed by the user. This can significantly improve initial page load times.
+        - Responsive Images: Serve different image sizes based on the user's device and screen resolution.
+
 
 
 
