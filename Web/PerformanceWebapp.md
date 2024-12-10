@@ -23,3 +23,13 @@ Web vitals
     - Minimize HTTP Requests: Combine and minify files to reduce the number of requests.
     - Reduce Server Response Time: Optimize server configuration and database queries.
     - Test and Monitor Performance: Regularly test your website's performance and make necessary adjustments.
+
+    - HTML Parsing: The browser starts by parsing the HTML document. This involves breaking down the HTML code into a tree-like structure called the DOM (Document Object Model).   
+    - CSS Loading and Parsing: If there are external stylesheets linked in the HTML, the browser fetches and parses them. This CSS is then applied to the DOM to style the page elements.   
+    - JavaScript Execution: Once the HTML is parsed and the CSS is applied, the browser encounters JavaScript scripts. By default, these scripts are blocking, meaning the browser pauses the rendering process until they are executed.
+
+        - Deferred JavaScript:
+        - Minimize Critical JavaScript
+        - Optimize JavaScript - tree shaking
+
+
