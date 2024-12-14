@@ -1,0 +1,22 @@
+{
+    "testMatch": ["**/__tests__/**/*.test.mjs", "**/__tests__/**/*.spec.mjs", "**/__tests__/**/add.test.mjs"],
+    "transform": {
+      "^.+\\.mjs$": "babel-jest"
+    },
+    "testEnvironment": "node",
+    "moduleFileExtensions": ["js", "mjs", "json", "node"],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1",
+      "^(\\.{1,2}/.*)\\.mjs$": "$1"
+    },
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/dist/**"
+    ], 
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ], 
+    "coverageReporters": ["text", "lcov"] 
+}
