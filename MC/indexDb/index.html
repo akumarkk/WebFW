@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IndexedDB</title>
+</head>
+<!-- Do not make any changes to the boilerplate code. -->
+<body>
+    <h3>Name</h3>
+    <input type="text" id="name" />
+    <h3>Address</h3>
+    <input type="text" id="add" />
+    <h3>Phone</h3>
+    <input type="text" id="ph" />
+    <button>Add to database</button>
+    <script>
+        // Please the code below to write the program to implement the features
+        let db;
+
+        
+        let btn = document.querySelector("button");
+        console.log(btn);
+        let request = indexedDB.open("employees", 3.1);
+        request.onsuccess = function() {
+            db = request.result;
+            // if (!db.objectStoreNames.contains('employee')) { // if there's no "books" store
+            //     db.createObjectStore('employee', { keyPath: 'eId' }); // create it
+            // }
+        };
+
+        request.onupgradeneeded = function() {
+            db = request.result;
+            if (!db.objectStoreNames.contains('employee')) { // if there's no "books" store
+                db.createObjectStore('employee', { keyPath: 'eId', autoIncrement: true }); // create it
+            }
+        };
+
+        btn.addEventListener("click", () => {
+            console.log("Button clicked");
+            let name = document.querySelector("#name");
+            let address = document.querySelector("#add");
+            let phone = document.querySelector("#ph");
+            let employee = {
+                // eId: 1,
+                name: name.value,
+                address: address.value,
+                phone: phone.value
+            };
+            let transaction = db.transaction(["employee"], "readwrite");
+            let store = transaction.objectStore("employee");
+            let request = store.add(employee);
+            transaction.oncomplete = () => {
+                console.log("Employee added successfully");
+            };
+
+            transaction.onerror = () => {
+                console.log("Error adding employee", request.error);
+            }
+        });
+    </script>
+</body>
+
+</html>
