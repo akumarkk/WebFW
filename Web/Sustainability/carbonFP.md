@@ -1,0 +1,2 @@
+###### Carbon Foorprint
+According to most estimates, the average carbon footprint per page view on a website is around 1.76 grams of CO2. This means that for every time someone visits a webpage, roughly 1.76 grams of carbon dioxide is emitted due to the energy used to load and display the page.
