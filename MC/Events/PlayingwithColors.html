@@ -70,7 +70,6 @@ src = './assets/profile.png'
     for(let i=0; i<d.length; i++) {
         d[i].addEventListener('dblclick', () => {
             d[i].className += ' ' + d[i].getAttribute('data-color');
-            
             // d[i].style.backgroundColor = d[i].getAttribute('data-color');
             d[i].setAttribute('data-color', 'used');
             
