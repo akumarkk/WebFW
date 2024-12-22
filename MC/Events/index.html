@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores,
+      rerum repudiandae enim consectetur consequatur quae recusandae,
+      perferendis at quod illum, deleniti similique a eius nulla architecto
+      earum. Iure, deleniti.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores,
+      rerum repudiandae enim consectetur consequatur quae recusandae,
+      perferendis at quod illum, deleniti similique a eius nulla architecto
+      earum. Iure, deleniti.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores,
+      rerum repudiandae enim consectetur consequatur quae recusandae,
+      perferendis at quod illum, deleniti similique a eius nulla architecto
+      earum. Iure, deleniti.
+    </p>
+    <script>
+        let count = 0;
+            let p = document.getElementsByTagName('p');
+            for (let i = 0; i < p.length; i++) {
+                p[i].addEventListener('click', () => {
+                    count++;
+                    if (count == 3) {
+                        p[i].style.backgroundColor = '';
+                        count = 0;
+                    } else {
+                        p[i].style.backgroundColor = 'red';
+                    }
+                    console.log('Paragraph clicked');
+                
+                    p[i].style.backgroundColor = 'yellow';
+                    console.log('Paragraph hovered');
+                });
+
+                p[i].addEventListener('dblclick', () => {
+                    p[i].style.backgroundColor = 'green';
+                    console.log('Paragraph clicked');
+                });
+            }
+      
+      
+      
+      // WRITE THE JS PROGRAM HERE ====================================================================
+    </script>
+  </body>
+</html>
