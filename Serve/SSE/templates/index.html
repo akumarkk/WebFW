@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSE </title>
+</head>
+<body>
+    <h1>Server-Sent Events</h1>
+    <div id="messages"></div>
+
+    <script>
+        var source = new EventSource('http://127.0.0.1:5000/stream');
+
+        source.onmessage = function(event) {
+            var data = JSON.parse(event.data);
+            var message = document.createElement('p');
+            message.textContent = data.message;
+            document.getElementById('messages').appendChild(message);
+        };
+
+        source.onerror = function(error) {
+            console.error("EventSource failed.", error);
+        };
+
+        source.onopen = () => {
+                console.log('Connection to SSE endpoint opened');
+            };
+    </script>
+</body>
+</html>
