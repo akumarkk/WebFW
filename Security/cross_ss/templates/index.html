@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Form Example</title>
+</head>
+<body>
+    <h1>Enter your information</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" value="{{ name or '' }}"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" value="{{ email or '' }}"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
