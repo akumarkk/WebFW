@@ -33,6 +33,8 @@ Component({
 
 ###### Module
 - import all the components!
+- selector for the component
+    component.ts, index.html
 - boostrap - start component!
 
 ```
