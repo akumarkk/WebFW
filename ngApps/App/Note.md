@@ -24,7 +24,21 @@ Component({
 ```
 
 - Component - decorator function!
-- applying specific beh - fw 've  - decorator; The framework might automatically apply certain behaviors or configurations to classes decorated with @Model 
+- applying specific beh - fw 've  - decorator; The framework might automatically apply certain behaviors or configurations to classes decorated with @Model
+
+###### Module
+```
+@NgModule({
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+})
+```
 
 
 ###### Binding
