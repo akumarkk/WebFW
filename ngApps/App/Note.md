@@ -11,6 +11,11 @@ Angular - binding framework
         app.component.ts
         app.component.html
         app.component.css
+    pollyfills.ts
+
+
+###### Entry point
+main.ts
 
 ###### Component Binding
 binding b/w component and the object is done using attribute/decorator/data annotation!
