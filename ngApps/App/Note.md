@@ -31,6 +31,13 @@ Component({
 - Component - decorator function!
 - applying specific beh - fw 've  - decorator; The framework might automatically apply certain behaviors or configurations to classes decorated with @Model
 
+###### Webpack
+packaging resources!
+
+###### angular.json
+config for each of package.json clis!
+
+
 ###### Module
 - import all the components!
 - selector for the component
