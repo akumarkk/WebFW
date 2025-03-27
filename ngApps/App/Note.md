@@ -76,3 +76,8 @@ Component({
     styleUrl: './app.component.css'
 })
 ```
+
+
+###### load
+/
+/dist/app-name
