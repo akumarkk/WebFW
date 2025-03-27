@@ -37,6 +37,14 @@ packaging resources!
 ###### angular.json
 config for each of package.json clis!
 
+###### dist
+vendor.js - src code
+polyfill.js
+runtime.js - webpack runtime
+main.js - ep!
+style.js - all css!
+
+###### vendor.js
 
 ###### Module
 - import all the components!
