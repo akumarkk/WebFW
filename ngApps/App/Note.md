@@ -23,6 +23,9 @@ Component({
 })
 ```
 
+- Component - decorator function!
+- applying specific beh - fw 've  - decorator; The framework might automatically apply certain behaviors or configurations to classes decorated with @Model 
+
 
 ###### Binding
 binding b/w component and the object is done using attribute/decorator/data annotations!
