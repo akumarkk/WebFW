@@ -37,6 +37,12 @@ app.use(
   }),
 );
 
+
+app.get('/hello', (req, res) => {
+  res.send('Hello, welcome to app!')
+})
+
+
 /**
  * Handle all other requests by rendering the Angular application.
  */
@@ -48,6 +54,7 @@ app.use('/**', (req, res, next) => {
     )
     .catch(next);
 });
+
 
 /**
  * Start the server if this module is the main entry point.
