@@ -6,7 +6,7 @@ import {Customer} from './customer.model'
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 @Component({
-    selector: 'app-root',
+    // selector: 'app-root',
     templateUrl: './customer.view.html',
     styleUrls: ['./customer.component.scss'],
     imports: [FormsModule, CommonModule]
