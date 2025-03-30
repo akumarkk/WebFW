@@ -9,13 +9,15 @@ import { Router } from '@angular/router';
     templateUrl: "./master.view.html",
     styleUrl: "./master.component.scss",
     imports: [FormsModule, CommonModule, RouterModule]})
-export class MasterComponent{
+export class MasterComponent {
     currentUrl: string;
 
-  constructor(private router: Router) {
-    this.currentUrl = this.router.url;
-    console.log("ctor ",  this.currentUrl);
-  }
+    constructor(private router: Router) {
+        this.currentUrl = this.router.url;
+        console.log("ctor ", this.currentUrl);
+    }
+
+    // not required as component is loaded once!
     isMaster() {
         // let seg =  this.currentUrl.split("/");
         console.log(this.currentUrl);
@@ -23,10 +25,10 @@ export class MasterComponent{
         //     return true;
         // }
 
-        if(this.currentUrl == "/"){
+        if (this.currentUrl == "/") {
             return true;
         }
         return false;
     }
-        
+
 }
