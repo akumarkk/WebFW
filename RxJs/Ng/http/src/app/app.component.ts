@@ -30,7 +30,7 @@ export class AppComponent {
       
     observable.subscribe({next: (data) => {
       console.log(data);
-      // console.log(data.json());
+      // console.log(data.json()); // json res!
     }});
 
     // (data) => {
