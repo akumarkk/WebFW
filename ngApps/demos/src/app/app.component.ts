@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, viewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NestedcompcommComponent } from './comp/nestedcompcomm/nestedcompcomm.component';
 
@@ -13,4 +13,15 @@ export class AppComponent {
   title = 'demos';
   name = 'Yash';
   description = 'Yash, the men/hero!';
+
+  @ViewChild('hRefVar')
+  h4Ref!: ElementRef;
+
+  update(arg:HTMLHeadElement) {
+    console.log(this.h4Ref, arg);
+    arg.style.color = "red";
+    // this.h4Ref.nativeElement.style.color = "red";
+    this.h4Ref.nativeElement.style.backgroundColor = "teal";
+
+  }
 }

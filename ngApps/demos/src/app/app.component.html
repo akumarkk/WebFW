@@ -3,10 +3,11 @@
 
 <!-- Yash, the men/hero! -->
 <app-nestedcompcomm [name]="name" [description] = "description">
-  <h4>The hero </h4>
+  <h4 #hRefVar>The hero </h4>
   <h3 ngProjectAs="card-header">First Hero!</h3>
   
   <div ngProjectAs="card-footer">
     <h3 background-color="teal">Achiever</h3>
   </div>
 </app-nestedcompcomm>
+<button (click)="update(hRefVar)">Update</button>
