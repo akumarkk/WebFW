@@ -17,11 +17,11 @@ export class AppComponent {
   @ViewChild('hRefVar')
   h4Ref!: ElementRef;
 
-  update(arg:HTMLHeadElement) {
-    console.log(this.h4Ref, arg);
-    arg.style.color = "red";
-    // this.h4Ref.nativeElement.style.color = "red";
-    this.h4Ref.nativeElement.style.backgroundColor = "teal";
+  update(arg:HTMLElement) {
+    console.log(this.h4Ref);
+    this.h4Ref.nativeElement.style.color = "red";
+    arg.style.backgroundColor = "teal";
+
 
   }
 }
