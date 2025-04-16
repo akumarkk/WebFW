@@ -10,15 +10,17 @@ import { RouterOutlet } from '@angular/router';
     <button (click)="showTemplate()">Show Card</button>
     <div #templateContainer></div>
     `,
-  templateUrl: './card.template.html',
+  templateUrl: 'app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'cardTemplateAppdemo';
-  @ViewChild('cardTemplate', { read: TemplateRef }) externalTemplate!: TemplateRef<any>;
+  @ViewChild('cardTemplate', ) externalTemplate!: TemplateRef<any>;
   @ViewChild('templateContainer', { read: ViewContainerRef }) container!: ViewContainerRef;
 
   showTemplate(): void {
+    console.log(this.externalTemplate);
+    console.log(this.container);
     this.container.createEmbeddedView(this.externalTemplate, { name: 'Angular User' });
   }
 }
