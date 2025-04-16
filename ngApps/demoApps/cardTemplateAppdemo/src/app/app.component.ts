@@ -10,7 +10,7 @@ import { RouterOutlet } from '@angular/router';
     <button (click)="showTemplate()">Show Card</button>
     <div #templateContainer></div>
     `,
-  templateUrl: './app.component.html',
+  templateUrl: './card.template.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
