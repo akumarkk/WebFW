@@ -10,6 +10,7 @@ export interface Company {
   Country: string;
   Phone: string;
   Fax: string | null;
+  HQ?: string;
 }
 
 export const localData: Company[] = [
@@ -24,7 +25,8 @@ export const localData: Company[] = [
     PostalCode: '12209',
     Country: 'Germany',
     Phone: '030-0074321',
-    Fax: '030-0076545'
+    Fax: '030-0076545',
+    HQ: 'Germany'
   },
   {
     ID: 'ANATR',
@@ -37,7 +39,8 @@ export const localData: Company[] = [
     PostalCode: '05021',
     Country: 'Mexico',
     Phone: '(5) 555-4729',
-    Fax: '(5) 555-3745'
+    Fax: '(5) 555-3745',
+    HQ: 'Mexico'
   },
   {
     ID: 'ANTON',
@@ -50,7 +53,8 @@ export const localData: Company[] = [
     PostalCode: '05023',
     Country: 'Mexico',
     Phone: '(5) 555-3932',
-    Fax: null
+    Fax: null,
+    HQ: 'Mexico'
   },
   {
     ID: 'AROUT',
@@ -63,7 +67,8 @@ export const localData: Company[] = [
     PostalCode: 'WA1 1DP',
     Country: 'UK',
     Phone: '(171) 555-7788',
-    Fax: '(171) 555-6750'
+    Fax: '(171) 555-6750',
+    HQ: 'UK'
   },
   {
     ID: 'BERGS',
@@ -76,7 +81,8 @@ export const localData: Company[] = [
     PostalCode: 'S-958 22',
     Country: 'Sweden',
     Phone: '0921-12 34 65',
-    Fax: '0921-12 34 67'
+    Fax: '0921-12 34 67',
+    HQ: 'Sweden'
   },
   {
     ID: 'BLAUS',
@@ -89,7 +95,8 @@ export const localData: Company[] = [
     PostalCode: '68306',
     Country: 'Germany',
     Phone: '0621-08460',
-    Fax: '0621-08924'
+    Fax: '0621-08924',
+    HQ: 'Germany'
   },
   {
     ID: 'BLONP',
@@ -102,7 +109,8 @@ export const localData: Company[] = [
     PostalCode: '67000',
     Country: 'France',
     Phone: '88.60.15.31',
-    Fax: '88.60.15.32'
+    Fax: '88.60.15.32',
+    HQ: 'France'
   },
   {
     ID: 'BOLID',
@@ -115,7 +123,8 @@ export const localData: Company[] = [
     PostalCode: '28023',
     Country: 'Spain',
     Phone: '(91) 555 22 82',
-    Fax: '(91) 555 91 99'
+    Fax: '(91) 555 91 99',
+    HQ: 'Spain'
   },
   {
     ID: 'BONAP',
