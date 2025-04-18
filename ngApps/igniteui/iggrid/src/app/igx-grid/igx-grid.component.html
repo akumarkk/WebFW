@@ -1,0 +1,30 @@
+<p>IgxGrid with multiple header columns.</p>
+<p>You can read more about configuring the igx-grid component in the
+  <a href="https://github.com/IgniteUI/igniteui-angular/blob/master/projects/igniteui-angular/src/lib/grids/README.md" target="_blank">README</a> or the
+  <a href="https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/multi-column-headers" target="_blank">official documentation</a>.
+</p>
+
+<p>Active features: </p>
+<igx-grid #grid1 [data]="localData" width="960px" height="550px"  >
+  <igx-column  field="ID"></igx-column>
+  <igx-column-group  header="General Information">
+    <igx-column  field="CompanyName"></igx-column>
+    <igx-column-group  header="Person Details">
+      <igx-column  field="ContactName"></igx-column>
+      <igx-column  field="ContactTitle"></igx-column>
+    </igx-column-group>
+  </igx-column-group>
+  <igx-column-group header="Address Information">
+    <igx-column-group  header="Location">
+      <igx-column  field="Country"></igx-column>
+      <igx-column  field="Region"></igx-column>
+      <igx-column  field="City"></igx-column>
+      <igx-column  field="Address"></igx-column>
+    </igx-column-group>
+    <igx-column-group  header="Contact Information">
+        <igx-column  field="Phone"></igx-column>
+        <igx-column  [resizable]="true" field="Fax"></igx-column>
+        <igx-column  [resizable]="true" field="PostalCode"></igx-column>
+    </igx-column-group>
+  </igx-column-group>
+</igx-grid>
