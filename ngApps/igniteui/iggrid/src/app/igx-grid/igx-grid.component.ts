@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { Company, localData } from './localData';
 import { IgxGridComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxPaginatorComponent } from 'igniteui-angular';
 
@@ -12,7 +12,7 @@ import { IgxGridComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxPagin
     IgxColumnGroupComponent,
     IgxPaginatorComponent]
 })
-export class IgxDataGridComponent implements OnInit {
+export class IgxDataGridComponent implements OnInit, AfterViewInit  {
   @ViewChild('paginator', { static: true })
   public paginator!: IgxPaginatorComponent;
 
@@ -28,8 +28,13 @@ export class IgxDataGridComponent implements OnInit {
 
   public get localData(): Company[] {
     let coms = this.localDataArr;
-    coms = this.paginator ? this.localDataArr.slice(this.paginator.page * this.paginator.perPage, (this.paginator.page + 1) * this.paginator.perPage) : this.localDataArr;
-
+    coms = this.paginator ? 
+    this.localDataArr.slice(
+      this.paginator.page * this.paginator.perPage, 
+      (this.paginator.page * this.paginator.perPage) + this.paginator.perPage*5
+      
+    ): this.localDataArr;
+   
     return coms;
   }
 
