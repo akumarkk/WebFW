@@ -1,6 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { Company, localData } from './localData';
-import { IgxGridComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxPaginatorComponent } from 'igniteui-angular';
+import { IgxGridComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxPaginatorComponent, IgxRowSelectorDirective, IgxSwitchComponent } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-igx-grid',
@@ -10,11 +11,15 @@ import { IgxGridComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxPagin
   imports: [IgxGridComponent,
     IgxColumnComponent,
     IgxColumnGroupComponent,
-    IgxPaginatorComponent]
+    IgxPaginatorComponent,
+    IgxRowSelectorDirective,
+    IgxSwitchComponent,
+  FormsModule]
 })
 export class IgxDataGridComponent implements OnInit, AfterViewInit  {
   @ViewChild('paginator', { static: true })
   public paginator!: IgxPaginatorComponent;
+  public hideRowSelectors = false;
 
   public localDataArr: Company[] = [];
   title = 'igxGrid';

@@ -5,9 +5,15 @@
 </p>
 
 <p>Active features: </p>
+<igx-switch [(ngModel)]="hideRowSelectors">Hide Row Selectors</igx-switch>
 <igx-grid #grid1 [data]="localData" width="960px" height="550px"
 filterMode="excelStyleFilter"
 [allowFiltering]="true"
+rowSelection="multiple"
+
+columnSelection="multiple"
+
+hideRowSelectors="false"
 
 >
 <igx-paginator #paginator
