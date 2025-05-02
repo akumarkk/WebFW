@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.WebUtilities
 @inject NavigationManager NavMgr
 @inject DIAppState diState
+@inject JSStorage jsStorage
 @page "/counter"
 
 <PageTitle>Counter</PageTitle>
@@ -11,6 +12,9 @@
 <p role="status">ApplicationVal count: @ApplicationVal.Counter</p>
 
 <p role="status">DIState count: @diState.Counter</p>
+<p role="status">Session count: @sessionCount</p>
+
+
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
@@ -20,16 +24,22 @@
 @code {
     private int currentCount = 0;
 
+    private int sessionCount = 0;
+
     [CascadingParameter]
     public AppState ApplicationVal{get; set;}
 
-    private void IncrementCount()
+    protected override async Task OnInitializedAsync()
+    {
+        sessionCount = Convert.ToInt32(await jsStorage.GetItem("counter"));
+    }
+    private async Task IncrementCount()
     {
         currentCount++;
         ApplicationVal.Counter++;
         diState.Counter++;
+        await jsStorage.SetItem("counter", currentCount.ToString());
     }
-
 
     private void TransportState() {
         var d = new Dictionary<string, string> {
