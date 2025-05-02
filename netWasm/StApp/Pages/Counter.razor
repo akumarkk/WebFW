@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.WebUtilities
 @inject NavigationManager NavMgr
+@inject DIAppState diState
 @page "/counter"
 
 <PageTitle>Counter</PageTitle>
@@ -8,6 +9,8 @@
 
 <p role="status">Current count: @currentCount</p>
 <p role="status">ApplicationVal count: @ApplicationVal.Counter</p>
+
+<p role="status">DIState count: @diState.Counter</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
@@ -24,6 +27,7 @@
     {
         currentCount++;
         ApplicationVal.Counter++;
+        diState.Counter++;
     }
 
 

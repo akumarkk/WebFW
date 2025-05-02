@@ -1,5 +1,7 @@
 ﻿@using Microsoft.AspNetCore.WebUtilities
 @inject NavigationManager NavMgr
+@inject DIAppState diState
+
 @page "/weather"
 @inject HttpClient Http
 
@@ -9,6 +11,9 @@
 
 <p>This component demonstrates fetching data from the server.</p>
 <p role="status">Querystring counter value : @counterQuery</p>
+
+<p role="status">DIState count: @diState.Counter</p>
+
 @if (forecasts == null)
 {
     <p><em>Loading...</em></p>
