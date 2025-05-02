@@ -1,4 +1,6 @@
-﻿@page "/weather"
+﻿@using Microsoft.AspNetCore.WebUtilities
+@inject NavigationManager NavMgr
+@page "/weather"
 @inject HttpClient Http
 
 <PageTitle>Weather</PageTitle>
@@ -6,7 +8,7 @@
 <h1>Weather</h1>
 
 <p>This component demonstrates fetching data from the server.</p>
-
+<p role="status">Querystring counter value : @counterQuery</p>
 @if (forecasts == null)
 {
     <p><em>Loading...</em></p>
@@ -41,12 +43,18 @@ else
 @code {
     private WeatherForecast[]? forecasts;
 
+public int counterQuery {get; set;}
     [CascadingParameter]
     public AppState ApplicationVal{get; set;}
 
     protected override async Task OnInitializedAsync()
     {
         forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+
+        var queryString = QueryHelpers.ParseQuery(NavMgr.ToAbsoluteUri(NavMgr.Uri).Query);
+        if(queryString.TryGetValue("counter", out var counter)) {
+            counterQuery = (int)Int64.Parse(counter);
+        } 
     }
 
     public class WeatherForecast

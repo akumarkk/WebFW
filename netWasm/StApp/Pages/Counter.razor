@@ -1,4 +1,6 @@
-﻿@page "/counter"
+﻿@using Microsoft.AspNetCore.WebUtilities
+@inject NavigationManager NavMgr
+@page "/counter"
 
 <PageTitle>Counter</PageTitle>
 
@@ -8,6 +10,9 @@
 <p role="status">ApplicationVal count: @ApplicationVal.Counter</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+
+<button class="btn btn-primary" @onclick="TransportState">Navigate</button>
 
 @code {
     private int currentCount = 0;
@@ -19,5 +24,14 @@
     {
         currentCount++;
         ApplicationVal.Counter++;
+    }
+
+
+    private void TransportState() {
+        var d = new Dictionary<string, string> {
+            {"counter", currentCount.ToString()}
+            };
+
+        NavMgr.NavigateTo(QueryHelpers.AddQueryString("weather", d));
     }
 }
