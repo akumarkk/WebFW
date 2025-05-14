@@ -22,7 +22,6 @@ namespace ConsoleAppWithWpfCore
                 TextBlock textBlock = new TextBlock();
                 textBlock.Text = "Hello from WPF Core in Console!";
                 wpfWindow.Content = textBlock;
-
                 // Show the WPF window
                 wpfWindow.ShowDialog(); // Use Show() for non-modal
             });
