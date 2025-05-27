@@ -1,0 +1,8 @@
+@* @namespace Attr.Comp *@
+
+<input @attributes="AtAttr">
+
+@code {
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> AtAttr {get; set;} = new();   
+}

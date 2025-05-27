@@ -1,12 +1,17 @@
 ﻿@page "/counter"
 
 @using System.Reflection
+@using Attr.Comp
 
 <PageTitle>Counter</PageTitle>
 
 <h1>Counter</h1>
 
 <p role="status">Current count: @currentCount</p>
+
+@* <input @attributes="AtAttr"> *@
+
+<Attr.Comp.Attre placeholder="Enter your description" type="number" > </Attr.Comp.Attre>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
@@ -15,7 +20,11 @@
 
     [Parameter]
     [UserAttr("Surya", "The hero")]
-    public string DeAttribute{get; set;}
+    public string DeAttribute{get; set;} 
+
+
+    @* [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> AtAttr {get; set;} = new(); *@
 
     protected override void OnInitialized() {
         var propInfo = GetType().GetProperty(nameof(DeAttribute));
