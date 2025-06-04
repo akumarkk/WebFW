@@ -1,0 +1,12 @@
+.splitter {
+    width: 500px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.splitterpane {
+    flex-basis: 100%;
+    border: 1px solid saddlebrown;
+}
