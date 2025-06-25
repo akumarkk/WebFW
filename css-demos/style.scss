@@ -5,10 +5,52 @@ h3 {
 
 $bg-color: teal;
 $fs-1: 1rem;
+$f-color: burlywood;
+
+@mixin display-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin text-styling {
+    color: $f-color;
+    font-size: $fs-1 +1;
+}
+
 .mc {
+    @include display-center;
     background-color: $bg-color;
     font-size: $fs-1;
     height: 100vh;
     width: 100vw;
+    
+    // justify-content: center;
+    // align-items: center;
+
+    h3 {
+        @include text-styling;
+        
+
+        &:hover {
+            background-color: rgb(23, 110, 142);
+            &::before {
+                content: "You are";
+            }
+        }
+
+        
+        // margin: 0;
+    }
+
+    p {
+        color: $f-color;
+        font-size: $fs-1;
+    }
+
+    h3:hover {
+        color: rgb(3, 25, 59);;
+    }
+
 
 }

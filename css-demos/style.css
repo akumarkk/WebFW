@@ -1,8 +1,28 @@
 .mc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: teal;
   font-size: 1rem;
   height: 100vh;
   width: 100vw;
+}
+.mc h3 {
+  color: burlywood;
+  font-size: 2rem;
+}
+.mc h3:hover {
+  background-color: rgb(23, 110, 142);
+}
+.mc h3:hover::before {
+  content: "You are";
+}
+.mc p {
+  color: burlywood;
+  font-size: 1rem;
+}
+.mc h3:hover {
+  color: rgb(3, 25, 59);
 }
 
 /*# sourceMappingURL=style.css.map */
