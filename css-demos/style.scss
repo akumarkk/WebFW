@@ -1,24 +1,10 @@
+@import "mixins";
+
 h3 {
 
 }
 
-
-$bg-color: teal;
-$fs-1: 1rem;
-$f-color: burlywood;
-
-@mixin display-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-@mixin text-styling($text-ts,$ft-color:$f-color) {
-    color: $ft-color;
-    font-size: $fs-1;
-    text-transform: $text-ts;
-}
-
+// comment - hey
 .mc {
     @include display-center;
     background-color: $bg-color;
