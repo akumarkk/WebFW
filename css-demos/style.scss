@@ -13,9 +13,10 @@ $f-color: burlywood;
     align-items: center;
 }
 
-@mixin text-styling {
-    color: $f-color;
-    font-size: $fs-1 +1;
+@mixin text-styling($text-ts,$ft-color:$f-color) {
+    color: $ft-color;
+    font-size: $fs-1;
+    text-transform: $text-ts;
 }
 
 .mc {
@@ -29,7 +30,7 @@ $f-color: burlywood;
     // align-items: center;
 
     h3 {
-        @include text-styling;
+        @include text-styling(lowercase);
         
 
         &:hover {
@@ -44,8 +45,7 @@ $f-color: burlywood;
     }
 
     p {
-        color: $f-color;
-        font-size: $fs-1;
+        @include text-styling(lowercase, #a88a11);
     }
 
     h3:hover {

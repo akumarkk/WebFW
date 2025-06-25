@@ -9,7 +9,8 @@
 }
 .mc h3 {
   color: burlywood;
-  font-size: 2rem;
+  font-size: 1rem;
+  text-transform: lowercase;
 }
 .mc h3:hover {
   background-color: rgb(23, 110, 142);
@@ -18,8 +19,9 @@
   content: "You are";
 }
 .mc p {
-  color: burlywood;
+  color: #a88a11;
   font-size: 1rem;
+  text-transform: lowercase;
 }
 .mc h3:hover {
   color: rgb(3, 25, 59);
