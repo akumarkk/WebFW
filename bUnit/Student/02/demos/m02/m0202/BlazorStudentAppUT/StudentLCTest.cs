@@ -110,7 +110,6 @@ public class StudentLCTest
 
         Student student = new Student() { Name = "Yash", Id = 1, Address = "Blr" };
 
-
         var studentServiceMock = new Mock<IStudentsService>();
         studentServiceMock.Setup(x => x.GetStudentsAsync()).ReturnsAsync(students);
         studentServiceMock.Setup(o => o.AddStudentAsync(It.IsAny<Student>())).ReturnsAsync(student);
@@ -125,7 +124,7 @@ public class StudentLCTest
         cut.Find("input[id=\"phone\"]").Change("+91 1234567890");
 
         var h1Btn = cut.Find("h1");
-        
+
         // Act
         // Assert
         Assert.Throws<Bunit.MissingEventHandlerException>(() => h1Btn.Click());
