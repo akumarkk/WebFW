@@ -125,9 +125,7 @@ public class StudentLCTest
         cut.Find("input[id=\"phone\"]").Change("+91 1234567890");
 
         var h1Btn = cut.Find("h1");
-        // submitBtn.Click();
-
-
+        
         // Act
         // Assert
         Assert.Throws<Bunit.MissingEventHandlerException>(() => h1Btn.Click());
