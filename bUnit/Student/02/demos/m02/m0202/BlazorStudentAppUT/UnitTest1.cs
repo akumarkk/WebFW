@@ -62,7 +62,10 @@ public class UnitTest1
 
         Assert.Contains(student.Name, cut.Find(".modal-body h5").TextContent);
 
-        Assert.Contains( @"<h4 class=""modal-title"">" +heading+ "</h4>", cut.Markup);
+        Assert.Contains(@"<h4 class=""modal-title"">" + heading + "</h4>", cut.Markup);
+
+        Assert.Equal(heading, cut.Instance.Heading);
+        Assert.Equal(student, cut.Instance.SelectedStudent);
         // Assert.Contains(cut.Markup, student.Name);
         // Assert.Contains(cut.Markup, student.Id.ToString());
         // Assert.Contains(cut.Markup, student.Address);
