@@ -42,5 +42,22 @@ public class StudentLCTest
         Assert.Equal(3, cut.RenderCount);
     }
 
+    [Fact]
+    public void AsyncAwait_ShouldSucceed_IndexComponent_Test()
+    {
+        var str = "Hello World - BUnit!";
+        var ctx = new TestContext();
+        var textService = new TaskCompletionSource<string>();
+        
+        var cut = ctx.RenderComponent<BlazorStudentApp.Pages.Index>(
+            p => p.Add(p => p.TextService, textService.Task)
+        );
+
+        textService.SetResult(str);
+        cut.WaitForState(() => cut.Find("h6").TextContent == str);
+
+        Assert.Contains($"""<h6>{str}</h6>""", cut.Markup);
+    }
+
 
 }
