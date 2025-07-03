@@ -10,4 +10,12 @@
     <PackageReference Include="microsoft.aspnetcore.components.webassembly.server" Version="9.0.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectCapability Include="BlazorWebAssembly" /> 
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorwasmApp\BlazorwasmApp.csproj" />
+  </ItemGroup>
+
 </Project>
