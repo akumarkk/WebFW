@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zvGNcW66KGY=",
+  "dgSpecHash": "0Ea93a8WAvE=",
   "success": true,
   "projectFilePath": "C:\\Users\\anikris\\fwrepo\\blazorHost\\BlazorHostApp\\BlazorHostApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\13125\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.server\\9.0.6\\microsoft.aspnetcore.components.webassembly.server.9.0.6.nupkg.sha512"
+  ],
   "logs": []
 }

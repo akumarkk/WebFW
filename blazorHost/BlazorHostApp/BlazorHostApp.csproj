@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="microsoft.aspnetcore.components.webassembly.server" Version="9.0.6" />
+  </ItemGroup>
+
 </Project>
