@@ -15,11 +15,11 @@
     /* background-color: cadetblue; */
 }
 
-.container .resizer p.text:focus{
-    outline: none;
+.container .resizer > p.text:focus{
+    outline: auto 1px red;
     word-wrap: normal;
     word-break: break-all;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
 }
 
 .container .resizer .fixedwidth{
